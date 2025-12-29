@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cell.CellTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-12-29T20:07:52" hostname="Ziad" time="0.005">
+  <properties/>
+  <testcase name="testResetNoiseLevel" classname="cell.CellTest" time="0.001"/>
+  <testcase name="testIncreaseNoiseLevel" classname="cell.CellTest" time="0.0"/>
+  <testcase name="testGetSurvivors" classname="cell.CellTest" time="0.0"/>
+  <testcase name="testGetNoiseLevel" classname="cell.CellTest" time="0.001"/>
+  <testcase name="testGetName" classname="cell.CellTest" time="0.0"/>
+  <testcase name="testRemoveSurvivor" classname="cell.CellTest" time="0.001"/>
+  <testcase name="testGetZombies" classname="cell.CellTest" time="0.0"/>
+  <testcase name="testRemoveZombie" classname="cell.CellTest" time="0.0"/>
+  <testcase name="testAddZombie" classname="cell.CellTest" time="0.0"/>
+  <testcase name="testAddSurvivor" classname="cell.CellTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="actor.survivor.SurvivorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-12-29T20:07:52" hostname="Ziad" time="0.008">
+  <properties/>
+  <testcase name="canPutItemInHand" classname="actor.survivor.SurvivorTest" time="0.006"/>
+  <testcase name="canPutItemInBackpack" classname="actor.survivor.SurvivorTest" time="0.0"/>
+  <testcase name="initSurvivor" classname="actor.survivor.SurvivorTest" time="0.0"/>
+  <system-out><![CDATA[ puts Health potion in his hand.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

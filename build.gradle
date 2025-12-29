@@ -1,0 +1,79 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'zombieapocalypse'
+version = '1.0'
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JUnit 4
+    testImplementation 'junit:junit:4.13.2'
+
+    // JUnit 5 (Jupiter)
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+
+    // JUnit Vintage to run JUnit 4 tests under JUnit 5 platform
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.10.0'
+}
+
+test {
+    // Run all tests: JUnit 4 + JUnit 5
+    useJUnitPlatform()
+}
+
+// Configure JAR creation
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'zombieapocalypse.controller.Livrable'
+        )
+    }
+
+    // Optional: include runtime dependencies in the JAR (fat JAR)
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+// Copy the JAR to "jar/zombicide.jar" like your Makefile
+task copyJar(type: Copy) {
+    dependsOn jar
+    from jar
+    into 'jar'
+    rename { 'zombicide.jar' }
+}
+
+// Generate Javadoc
+task generateDocs(type: Javadoc) {
+    source = sourceSets.main.allJava
+    classpath = sourceSets.main.compileClasspath
+    destinationDir = file("$buildDir/docs")
+}
+
+// Clean everything including docs and old JAR
+task cleanAll {
+    group = 'build'
+    description = 'Cleans build, docs, and JAR'
+    doLast {
+        delete 'build', 'docs', 'jar/zombicide.jar'
+    }
+}
+
+// Optional: run the application
+tasks.register('runApp', JavaExec) {
+    group = 'application'
+    description = 'Run the main class'
+    classpath = sourceSets.main.runtimeClasspath
+    mainClass.set('zombieapocalypse.controller.Livrable')
+    // Pass program arguments like ./gradlew runApp --args="10 14 4"
+    args = []
+}
