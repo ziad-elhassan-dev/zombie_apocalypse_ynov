@@ -3,7 +3,7 @@
 ## Etudiants:
 - Ziad El Hassan
 - Ahmed Benarous
-- Mathieu
+- Mathieu Marchand
 
 ---
 
